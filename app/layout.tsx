@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { PenguinMascot } from "@/components/penguin-mascot";
 import { personalInfo } from "@/lib/data";
 
 const geistSans = Geist({
@@ -32,11 +33,20 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try { if (localStorage.getItem('penguin-hidden') === 'true') { document.documentElement.classList.add('penguin-hidden'); } } catch (e) {}",
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
+          <PenguinMascot />
         </ThemeProvider>
       </body>
     </html>

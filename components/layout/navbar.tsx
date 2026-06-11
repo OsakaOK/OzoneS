@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { PenguinToggle } from "@/components/penguin-toggle";
 import { personalInfo } from "@/lib/data";
 
 const navLinks = [
@@ -36,10 +37,12 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <PenguinToggle />
           <ThemeToggle />
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
+          <PenguinToggle />
           <ThemeToggle />
           <button
             type="button"

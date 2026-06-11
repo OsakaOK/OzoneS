@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant penguin-hidden (&:where(.penguin-hidden, .penguin-hidden *));
 
 :root {
   --background: #ffffff;
@@ -108,4 +109,39 @@ body {
   padding-left: 1em;
   font-style: italic;
   opacity: 0.85;
+}
+
+.penguin-mascot {
+  position: fixed;
+  bottom: 1rem;
+  z-index: 30;
+  transition: left 0.1s linear;
+}
+
+.penguin-hidden .penguin-mascot {
+  display: none;
+}
+
+@keyframes penguin-waddle {
+  0%,
+  100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.penguin-waddle {
+  transform-origin: bottom center;
+}
+
+.penguin-waddle.is-running {
+  animation: penguin-waddle 0.15s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .penguin-waddle.is-running {
+    animation: none;
+  }
 }
