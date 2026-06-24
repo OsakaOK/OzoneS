@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OZONES
+
+Personal portfolio site for **Osaka Khamphavong** — Computer Science graduate (Wilfrid Laurier University). A single-page resume site showcasing about, skills, projects, experience, and education, plus a small MDX blog.
+
+**Live:** https://ozones-web.vercel.app
+
+## Tech Stack
+
+- **Next.js 16** (App Router) + **TypeScript**
+- **Tailwind CSS v4** — CSS-based config in `app/globals.css`, class-based dark mode via `next-themes`
+- **Typography** via `next/font`: Space Grotesk (display), Inter (body), JetBrains Mono (labels)
+- **Icons:** `lucide-react`, plus custom inline SVGs for GitHub/LinkedIn
+- **Blog:** MDX files in `content/posts/`, parsed with `gray-matter`, rendered with `next-mdx-remote/rsc`
+- **Hosting:** Vercel (auto-deploys on push to `main`)
+
+## Features
+
+- Single-page layout with anchor-linked sections (Hero, About, Skills, Projects, Experience, Education, Contact)
+- Light/dark mode toggle
+- Icy-teal "penguin brand" design: numbered section headers, scroll-reveal animations, and hover-lift cards (all respecting `prefers-reduced-motion`)
+- A penguin mascot that walks along the bottom as you scroll the home page (toggle in the navbar; hidden on blog pages)
+- MDX blog at `/blog`
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # eslint
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/                  # App Router pages, layout, global styles, favicon (icon.svg)
+  blog/               # /blog and /blog/[slug] routes
+components/
+  sections/           # Hero, About, Skills, Projects, Experience, Education, Contact
+  layout/             # Navbar, Footer
+  penguin*.tsx        # Mascot, toggle, and SVG
+  reveal.tsx          # Scroll-reveal wrapper (IntersectionObserver)
+  section.tsx         # Numbered section header + reveal wrapper
+content/posts/        # Blog posts (MDX with frontmatter)
+lib/data.ts           # Resume content (about, skills, projects, experience, education)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Editing Content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Resume content** (about, skills, projects, experience, education) lives in [`lib/data.ts`](lib/data.ts) as typed objects — edit this single file to update the site.
+- **Blog posts** are MDX files in [`content/posts/`](content/posts/); each needs frontmatter (title, date, excerpt).
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Hosted on [Vercel](https://vercel.com). The `main` branch is connected to the project, so every push automatically builds and deploys to https://ozones-web.vercel.app. Pull requests get their own preview URLs.
