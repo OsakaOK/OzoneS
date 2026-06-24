@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { PenguinToggle } from "@/components/penguin-toggle";
-import { personalInfo } from "@/lib/data";
+import { Penguin } from "@/components/penguin";
 
 const navLinks = [
   { label: "About", href: "/#about" },
@@ -23,8 +23,12 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-mono text-lg font-semibold tracking-tight">
-          {personalInfo.name}
+        <Link
+          href="/"
+          className="group flex items-center gap-2 font-display text-lg font-bold tracking-tight"
+        >
+          <Penguin className="size-6 transition-transform group-hover:-rotate-12" />
+          OZONES
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
@@ -32,7 +36,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+              className="text-sm font-medium text-zinc-600 transition-colors hover:text-accent dark:text-zinc-400 dark:hover:text-accent"
             >
               {link.label}
             </Link>
@@ -64,7 +68,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+                className="text-sm font-medium text-zinc-600 transition-colors hover:text-accent dark:text-zinc-400 dark:hover:text-accent"
               >
                 {link.label}
               </Link>

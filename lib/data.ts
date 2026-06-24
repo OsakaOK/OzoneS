@@ -59,6 +59,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: "FamFunds - Shared Expense Tracker",
+    description:
+      "A shared expense tracker built on Spaces — switch between a private Personal Space and shared Family Spaces.",
+    bullets: [
+      "Built a cross-platform mobile app with React Native (Expo) and TypeScript, backed by Supabase (PostgreSQL) for auth, data, and storage.",
+      "Modeled finances around intrinsic Spaces — a permanent private Personal Space auto-provisioned at signup plus shareable Family Spaces joined by a rotatable invite code, with admin/member permissions enforced through Postgres Row-Level Security.",
+      "Implemented per-month budgets with auto-carry from the prior month, a DB-enforced category list, and denormalized logger names so a departing member's expenses persist in the shared ledger.",
+    ],
+    tags: ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL"],
+    link: "https://github.com/OsakaOK/FamFunds",
+  },
+  {
     name: "PL Predict",
     description:
       "A prediction system for visualizing team performance trends.",
@@ -68,30 +80,6 @@ export const projects: Project[] = [
     ],
     tags: ["Python", "Pandas", "Scikit-learn", "React.js"],
     link: "https://github.com/OsakaOK/PL-Predict",
-  },
-  {
-    name: "Snip - URL Shortener",
-    description:
-      "A REST API that generates, redirects, and manages shortened URLs.",
-    bullets: [
-      "Built a REST API in Flask that generates, redirects, and manages shortened URLs, backed by a PostgreSQL store with indexed slug lookup for fast retrieval.",
-      "Containerized the service with Docker and deployed to Google Cloud Run, configuring environment variables and HTTPS endpoints for production access.",
-      "Implemented input validation, custom-slug support, and click counting, returning structured JSON responses with appropriate HTTP status codes.",
-    ],
-    tags: ["Python", "Flask", "PostgreSQL", "Docker", "Google Cloud"],
-    link: "https://github.com/OsakaOK/Snip",
-  },
-  {
-    name: "Sumly - Expense Tracker",
-    description:
-      "A full-stack expense tracker with secure, per-user data isolation.",
-    bullets: [
-      "Developed a full-stack expense tracker with a Spring Boot REST API, PostgreSQL data layer, and React front-end for adding, categorizing, and visualizing transactions.",
-      "Implemented JWT-based authentication and per-user data isolation, securing endpoints so users can only access their own records.",
-      "Designed a normalized schema across users, accounts, and transactions, supporting category filtering and monthly aggregation queries.",
-    ],
-    tags: ["Java", "Spring Boot", "PostgreSQL", "JWT", "React.js"],
-    link: "https://github.com/OsakaOK/Sumly",
   },
 ];
 

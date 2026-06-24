@@ -3,15 +3,15 @@ import { experience } from "@/lib/data";
 
 export function Experience() {
   return (
-    <Section id="experience" title="Experience">
+    <Section id="experience" index="04" title="Experience">
       <div className="space-y-8">
         {experience.map((item) => (
           <div
             key={`${item.role}-${item.company}`}
-            className="border-l-2 border-zinc-200 pl-6 dark:border-zinc-800"
+            className="relative border-l-2 border-zinc-200 pl-6 before:absolute before:-left-1.75 before:top-1.5 before:size-3 before:rounded-full before:border-2 before:border-accent before:bg-background before:transition-colors hover:border-accent/60 dark:border-zinc-800"
           >
             <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 className="font-semibold">
+              <h3 className="font-display font-semibold">
                 {item.role} · {item.company}
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">

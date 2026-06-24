@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Penguin } from "@/components/penguin";
 
 const MESSAGES = [
@@ -10,6 +11,7 @@ const MESSAGES = [
 ];
 
 export function PenguinMascot() {
+  const pathname = usePathname();
   const [progress, setProgress] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("right");
   const [isScrolling, setIsScrolling] = useState(false);
@@ -38,6 +40,9 @@ export function PenguinMascot() {
       clearTimeout(stopTimer);
     };
   }, []);
+
+  // Blog pages are short, single-column reads — no room for the walking mascot.
+  if (pathname?.startsWith("/blog")) return null;
 
   const zone = progress >= 2 / 3 ? 2 : progress >= 1 / 3 ? 1 : 0;
   const message = MESSAGES[zone];

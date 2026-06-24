@@ -1,8 +1,13 @@
 "use client";
 
 import { Eye, EyeOff } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export function PenguinToggle() {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/blog")) return null;
+
   const handleClick = () => {
     const hidden = document.documentElement.classList.toggle("penguin-hidden");
     localStorage.setItem("penguin-hidden", String(hidden));

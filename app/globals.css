@@ -6,21 +6,26 @@
 :root {
   --background: #ffffff;
   --foreground: #18181b;
-  --accent: #4f46e5;
+  /* Icy-teal brand accent. Darker tone in light mode for AA text contrast. */
+  --accent: #0d9488;
+  --accent-bright: #14b8a6;
 }
 
 .dark {
   --background: #0a0a0b;
   --foreground: #f4f4f5;
-  --accent: #818cf8;
+  --accent: #5eead4;
+  --accent-bright: #2dd4bf;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent-bright: var(--accent-bright);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+  --font-display: var(--font-space-grotesk);
 }
 
 html {
@@ -33,6 +38,7 @@ body {
 }
 
 .blog-content :where(h1, h2, h3) {
+  font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.025em;
   margin-top: 1.75em;
@@ -144,4 +150,74 @@ body {
   .penguin-waddle.is-running {
     animation: none;
   }
+}
+
+/* Scroll-reveal: hidden until .is-visible is toggled by the Reveal observer. */
+.reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Hero entrance: staggered fade-up driven by --i on each child. */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-rise > * {
+  opacity: 0;
+  animation: hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise > * {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Soft icy-teal glow + faint dot grid behind the hero. */
+.hero-glow {
+  background:
+    radial-gradient(
+      42rem 28rem at 12% -10%,
+      color-mix(in oklab, var(--accent-bright) 22%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      32rem 24rem at 92% 0%,
+      color-mix(in oklab, var(--accent-bright) 12%, transparent),
+      transparent 70%
+    );
+}
+
+.dot-grid {
+  background-image: radial-gradient(
+    currentColor 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
 }

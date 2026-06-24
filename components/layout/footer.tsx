@@ -23,7 +23,7 @@ export function Footer() {
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
               aria-label={link.label}
-              className="transition-colors hover:text-zinc-950 dark:hover:text-zinc-50"
+              className="transition-all hover:-translate-y-0.5 hover:text-accent"
             >
               <link.icon className="size-5" />
             </a>

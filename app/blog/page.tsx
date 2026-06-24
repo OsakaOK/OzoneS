@@ -18,9 +18,11 @@ export default function BlogPage() {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="block rounded-xl border border-zinc-200 p-6 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-900"
+            className="group block rounded-2xl border border-zinc-200 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 dark:border-zinc-800"
           >
-            <h3 className="text-lg font-semibold">{post.title}</h3>
+            <h3 className="font-display text-lg font-semibold transition-colors group-hover:text-accent">
+              {post.title}
+            </h3>
             <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
               {new Date(post.date).toLocaleDateString("en-US", {
                 year: "numeric",
