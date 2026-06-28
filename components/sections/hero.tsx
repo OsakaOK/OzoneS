@@ -31,12 +31,6 @@ export function Hero() {
             {personalInfo.name.split(" ").slice(1).join(" ")}
           </span>
         </h1>
-        <h2
-          style={{ "--i": 2 } as CSSProperties}
-          className="font-display text-xl font-semibold text-zinc-500 sm:text-2xl dark:text-zinc-400"
-        >
-          {personalInfo.title}
-        </h2>
         <p
           style={{ "--i": 3 } as CSSProperties}
           className="max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400"
