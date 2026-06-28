@@ -3,7 +3,7 @@
 ## Overview
 Personal portfolio site for Osaka Khamphavong (CS grad, Wilfrid Laurier University), branded **OZONES**. Showcases background, skills, projects, and experience from his resume, plus a simple blog.
 
-- **Live:** https://ozones-web.vercel.app
+- **Live:** https://ozones.one (custom domain via Porkbun; also at ozone-s.vercel.app)
 - **GitHub repo:** https://github.com/OsakaOK/OzoneS (local working dir is still named `My_Portfolio`)
 
 This is a fresh project, unrelated to the default `create-next-app` boilerplate at `/Users/orz_os/portfolio` — that project was not used or modified.
@@ -19,7 +19,7 @@ This is a fresh project, unrelated to the default `create-next-app` boilerplate 
 - Brand accent is an **icy-teal** token (`--accent` / `--accent-bright` in `globals.css`); penguin favicon at `app/icon.svg`
 - `lucide-react` for icons; custom inline SVGs for GitHub/LinkedIn (`components/icons.tsx`) since lucide dropped brand icons
 - Blog: MDX files in `content/posts/`, parsed with `gray-matter`, rendered with `next-mdx-remote/rsc`
-- **Deployed to Vercel** at https://ozones-web.vercel.app — auto-deploys on every push to `main`
+- **Deployed to Vercel** at https://ozones.one — auto-deploys on every push to `main`
 
 ## Design System (Penguin brand)
 - Single accent color (icy-teal) drives links, tags, hovers, and the hero gradient/glow

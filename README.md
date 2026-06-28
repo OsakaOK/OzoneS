@@ -2,7 +2,7 @@
 
 Personal portfolio site. A quick-to-skim resume site showcasing projects, skills, experience, and education, plus a small MDX blog.
 
-**Live:** https://ozones-web.vercel.app
+**Live:** https://ozones.one
 
 ## Tech Stack
 
