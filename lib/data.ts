@@ -1,6 +1,6 @@
 export const personalInfo = {
-  name: "Osaka Khamphavong",
-  title: "Computer Science Graduate",
+  name: "Osaka",
+  // title: "Computer Science Graduate",
   tagline:
     "I build full-stack applications and data-driven tools — from REST APIs to machine learning pipelines.",
   location: "Waterloo, ON",
@@ -8,7 +8,7 @@ export const personalInfo = {
   github: "https://github.com/OsakaOK",
   linkedin: "https://www.linkedin.com/in/osakakpv/",
   // TODO: replace with your real Instagram profile URL (the bio this site links from)
-  instagram: "https://www.instagram.com/",
+  instagram: "https://www.instagram.com/sushi_isthe_best",
 };
 
 export const about = {
