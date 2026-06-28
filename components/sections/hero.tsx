@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/icons";
+import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/icons";
 import { personalInfo } from "@/lib/data";
 
 export function Hero() {
@@ -49,7 +49,7 @@ export function Hero() {
           className="flex flex-wrap gap-4 pt-2"
         >
           <Link
-            href="/#projects"
+            href="/projects"
             className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/30"
           >
             View Projects
@@ -84,6 +84,15 @@ export function Hero() {
             className="transition-all hover:-translate-y-0.5 hover:text-accent"
           >
             <LinkedinIcon className="size-5" />
+          </a>
+          <a
+            href={personalInfo.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="transition-all hover:-translate-y-0.5 hover:text-accent"
+          >
+            <InstagramIcon className="size-5" />
           </a>
           <a
             href={`mailto:${personalInfo.email}`}

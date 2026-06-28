@@ -33,6 +33,27 @@ This is a fresh project, unrelated to the default `create-next-app` boilerplate 
 ### Current Plan
 Built, rebranded as OZONES, and deployed to Vercel. See "Open Questions" for follow-ups.
 
+### Quick-Browse Redesign Plan (IMPLEMENTED)
+Goal: site is being added to an Instagram bio, so the primary audience is now casual mobile visitors skimming for a few seconds, not just recruiters. Redesign optimizes for quick glance / quick browsing while still serving recruiters and peers who click deeper.
+
+**Status:** Built. Homepage (`app/page.tsx`) is now `Hero → ProjectsTeaser → QuickFacts → Contact`. New `components/sections/projects-teaser.tsx` (condensed cards linking to `/projects`) and `components/sections/quick-facts.tsx` (Skills/Experience/Education in 3 columns). New `app/projects/page.tsx` with full write-ups, mapping over `projects` (scales past 2). Nav simplified to Projects · Blog · Contact. Instagram added to hero socials + Contact (`InstagramIcon` in `components/icons.tsx`, `personalInfo.instagram` in `lib/data.ts`). Old single-purpose section files (about/skills/projects/experience/education.tsx) deleted. Hero kept as the polished personal intro (CTA now → `/projects`) rather than a project-led visual, since there are no real screenshots yet.
+
+**Remaining TODO:** set the real Instagram URL (`personalInfo.instagram` is a placeholder `https://www.instagram.com/`).
+
+**New homepage flow** (`app/page.tsx`): Hero(project-led + short bio) → Projects teaser (condensed, both projects, no separate full About/Projects sections) → Quick Facts (single merged section, 3 columns: Skills / Experience / Education, all condensed, stacks on mobile) → Contact
+
+- **Hero**: leads with the strongest project (FamFunds) full visual treatment, not a text bio first. A short bio line is folded directly into the hero (no standalone About section). CTA links to the new `/projects` page.
+- **Projects teaser**: condensed strip showing both current projects (FamFunds, PL Predict) as compact cards, kept mid-page as a second touchpoint (not removed).
+- **Quick Facts section**: merges Skills + Experience + Education into one section, three columns on desktop stacking vertically on mobile — no tabs (tabs add an extra tap, against the quick-browse goal). Each column condensed (tags for skills, short lines for experience/education) — full depth lives on resume/LinkedIn instead.
+- **Contact**: keep existing email/LinkedIn/GitHub icon links, add an Instagram icon link (closes the loop since traffic originates from Instagram). No CTA copy line added.
+- **Blog**: stays in nav as-is, not featured on homepage — only one placeholder post (`welcome-to-my-blog.mdx`) exists currently; revisit featuring once there's real content.
+
+**New `/projects` page**: dedicated route, separate from the homepage teaser. Must be built to scale beyond 2 cards since more practical projects are planned soon — don't hardcode for exactly 2. Each project gets a richer write-up than the teaser: problem/motivation, tech stack, role, challenges, live demo + repo links. Ships with placeholder visuals (no real screenshots yet); swap in real images later.
+
+**Nav** (`components/layout/navbar.tsx`): drop `/#about` (folded into hero) and `/#projects` (section removed in favor of teaser + dedicated page) anchors; add a `/projects` link pointing at the new page. Blog link stays.
+
+**Explicitly deferred to a later pass**: blog featuring on homepage, real project screenshots, additional visual/motion polish (current penguin/scroll-reveal stays as-is for now).
+
 ### Decisions Log
 - Built fresh in `My_Portfolio`; ignored the unused boilerplate at `/Users/orz_os/portfolio`
 - Single-page layout with anchor-linked sections (Hero, About, Skills, Projects, Experience, Education, Contact) + separate `/blog` and `/blog/[slug]` routes

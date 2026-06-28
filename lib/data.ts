@@ -7,6 +7,8 @@ export const personalInfo = {
   email: "osakakpv@gmail.com",
   github: "https://github.com/OsakaOK",
   linkedin: "https://www.linkedin.com/in/osakakpv/",
+  // TODO: replace with your real Instagram profile URL (the bio this site links from)
+  instagram: "https://www.instagram.com/",
 };
 
 export const about = {

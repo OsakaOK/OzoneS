@@ -1,20 +1,14 @@
 import { Hero } from "@/components/sections/hero";
-import { About } from "@/components/sections/about";
-import { Skills } from "@/components/sections/skills";
-import { Projects } from "@/components/sections/projects";
-import { Experience } from "@/components/sections/experience";
-import { Education } from "@/components/sections/education";
+import { ProjectsTeaser } from "@/components/sections/projects-teaser";
+import { QuickFacts } from "@/components/sections/quick-facts";
 import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Education />
+      <ProjectsTeaser />
+      <QuickFacts />
       <Contact />
     </>
   );

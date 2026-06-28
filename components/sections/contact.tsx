@@ -1,6 +1,6 @@
 import { Mail } from "lucide-react";
 import { Section } from "@/components/section";
-import { GithubIcon, LinkedinIcon } from "@/components/icons";
+import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/icons";
 import { personalInfo } from "@/lib/data";
 
 const contactLinks = [
@@ -9,6 +9,12 @@ const contactLinks = [
     value: personalInfo.email,
     href: `mailto:${personalInfo.email}`,
     icon: Mail,
+  },
+  {
+    label: "Instagram",
+    value: "Instagram",
+    href: personalInfo.instagram,
+    icon: InstagramIcon,
   },
   {
     label: "LinkedIn",
@@ -26,7 +32,7 @@ const contactLinks = [
 
 export function Contact() {
   return (
-    <Section id="contact" index="06" title="Get In Touch">
+    <Section id="contact" index="03" title="Get In Touch">
       <p className="max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
         I&apos;m currently looking for new opportunities. Whether you have a
         question or just want to say hi, my inbox is always open.
