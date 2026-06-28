@@ -1,6 +1,6 @@
 # OZONES
 
-Personal portfolio site for **Osaka Khamphavong** — Computer Science graduate (Wilfrid Laurier University). A quick-to-skim resume site showcasing projects, skills, experience, and education, plus a small MDX blog.
+Personal portfolio site. A quick-to-skim resume site showcasing projects, skills, experience, and education, plus a small MDX blog.
 
 **Live:** https://ozones-web.vercel.app
 
