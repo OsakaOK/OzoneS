@@ -111,7 +111,7 @@ export const experience: ExperienceItem[] = [
     role: "Instructor Assistant",
     company: "Wilfrid Laurier University",
     location: "Waterloo, ON",
-    period: "Sep. 2022 – Dec. 2022",
+    period: "Sep. 2022 – Dec. 2023",
     bullets: [
       "Supported over 100 students in introductory programming labs, by debugging code, identifying logic errors, and syntax issues.",
       "Reviewed code submissions and provided structured feedback on logic, efficiency, reviewing error messages, and testing edge cases.",
@@ -131,7 +131,7 @@ export const experience: ExperienceItem[] = [
     role: "IT Support Intern",
     company: "Just Fix it",
     location: "Kitchener, ON",
-    period: "Sep. 2019 – Jan. 2020",
+    period: "Sep. 2021 – Jan. 2022",
     bullets: [
       "Diagnosed and resolved network connectivity and switch configuration issues by accessing devices through PuTTY and reviewing configuration logs.",
       "Documented network changes, device configurations, and troubleshooting steps, improving traceability and future incident resolution.",
