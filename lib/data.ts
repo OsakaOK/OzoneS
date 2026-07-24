@@ -1,13 +1,11 @@
 export const personalInfo = {
   name: "Osaka",
-  // title: "Computer Science Graduate",
   tagline:
     "I build full-stack applications and data-driven tools — from REST APIs to machine learning pipelines.",
   location: "Waterloo, ON",
   email: "osakakpv@gmail.com",
   github: "https://github.com/OsakaOK",
   linkedin: "https://www.linkedin.com/in/osakakpv/",
-  // TODO: replace with your real Instagram profile URL (the bio this site links from)
   instagram: "https://www.instagram.com/sushi_isthe_best",
 };
 
@@ -30,7 +28,7 @@ export const skills: SkillGroup[] = [
   },
   {
     category: "Frameworks",
-    items: ["React.js", "Flask", "Spring Boot"],
+    items: ["React.js", "Next.js", "Flask", "Spring Boot"],
   },
   {
     category: "Tools",
@@ -55,11 +53,26 @@ export interface Project {
   description: string;
   bullets: string[];
   tags: string[];
-  // TODO: confirm exact repo URLs on https://github.com/OsakaOK
+  /** Source repository URL. */
   link: string;
+  /** Live deployment URL, when the project is hosted. */
+  demo?: string;
 }
 
 export const projects: Project[] = [
+  {
+    name: "Flag a Day",
+    description:
+      "A Wordle-style daily flag-guessing game — everyone gets the same flag each day, three guesses, and a community-driven layer of hints and fun facts.",
+    bullets: [
+      "Built a full-stack web app with Next.js (App Router, React) and TypeScript, using Drizzle ORM over Postgres — an embedded PGlite database for zero-setup local dev that swaps to Supabase Postgres in production.",
+      "Served one deterministic daily puzzle to every player from a fixed shuffle of ~250 countries indexed by day, with anonymous cookie-based identity and gated, community-driven hints, fun facts, up/down voting, and flag-based auto-moderation.",
+      "Set up a GitHub Actions CI pipeline (tests plus production build on every pull request) with continuous deployment to Vercel on each merge to main.",
+    ],
+    tags: ["Next.js", "React.js", "TypeScript", "Drizzle ORM", "PostgreSQL"],
+    link: "https://github.com/OsakaOK/F-aDay",
+    demo: "https://f-a-day.vercel.app",
+  },
   {
     name: "FamFunds - Shared Expense Tracker",
     description:

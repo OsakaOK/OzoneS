@@ -41,15 +41,28 @@ export default function ProjectsPage() {
                 <h2 className="font-display text-xl font-semibold sm:text-2xl">
                   {project.name}
                 </h2>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-zinc-200 px-3 py-1.5 text-sm font-medium transition-all hover:-translate-y-0.5 hover:border-accent hover:text-accent dark:border-zinc-800"
-                >
-                  Code
-                  <ExternalLink className="size-4" />
-                </a>
+                <div className="flex shrink-0 items-center gap-2">
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/30"
+                    >
+                      Live
+                      <ExternalLink className="size-4" />
+                    </a>
+                  )}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 px-3 py-1.5 text-sm font-medium transition-all hover:-translate-y-0.5 hover:border-accent hover:text-accent dark:border-zinc-800"
+                  >
+                    Code
+                    <ExternalLink className="size-4" />
+                  </a>
+                </div>
               </div>
 
               <p className="mt-3 text-zinc-600 dark:text-zinc-400">
